@@ -251,7 +251,7 @@ switch (target) {
 
 export default {
     exports: 'named',
-    name: 'meepo-runner',
+    name: 'meepo-shake',
     plugins,
     external: Object.keys(globals),
     globals,

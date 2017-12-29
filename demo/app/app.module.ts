@@ -1,14 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { RunnerModule } from '../../src/app/app';
+import { ShakeModule } from '../../src/app/app';
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
-    RunnerModule
+    ShakeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

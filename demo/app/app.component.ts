@@ -1,24 +1,27 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { RunnerOrderService, RunnerAppService } from '../../src/app/app';
+import {
+  Component, OnInit, ChangeDetectionStrategy,
+  ChangeDetectorRef, ViewEncapsulation, Renderer2,
+  ElementRef
+} from '@angular/core';
 import { Subject } from 'rxjs/Subject';
-import { Widget } from '../../src/app/service/order';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
   title = 'app';
-
   constructor(
-    public order: RunnerOrderService,
-    public app: RunnerAppService
-  ) { 
+    public cd: ChangeDetectorRef,
+    public render: Renderer2,
+    public ele: ElementRef
+  ) { }
+  ngOnInit() { }
 
-  }
-
-  ngOnInit() {
-    this.app.init();
+  doShake() {
+    this.title = 'shake';
+    this.cd.markForCheck();
   }
 }

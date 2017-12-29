@@ -1,4 +1,4 @@
-## runner for angular
+## shake for angular
 
 - 引入css自动加入摇一摇动画
 
